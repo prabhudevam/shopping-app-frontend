@@ -8,15 +8,16 @@ import { product } from './product';
   styleUrls: ['./viewproducts.component.css']
 })
 export class ViewproductsComponent implements OnInit {
-x:product;
+x1:product[]=[];
   constructor(public http:HttpClient) { }
 
   ngOnInit(): void {
   }
 call(){
-this.http.get<product>("http://localhost:8080/api/product/all").subscribe(
+this.http.get<any>("http://localhost:8080/api/product/all").subscribe(
   data=>{
-    this.x=data;
+this.x1=data;
+console.log(data);
   }
 )
 }

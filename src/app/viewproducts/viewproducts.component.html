@@ -1,6 +1,25 @@
 <p>viewproducts works!</p>
 <button type="button" (click)="call()" value="click me to fetch data">click me to fetch data</button>
-{{x.title}}
-{{x.description}}
-{{x.quantity}}
-{{x.price}}
+<div >
+
+
+
+</div>
+<table>
+    <tr>
+      <th>product id</th>
+      <th>tile</th>
+      <th>description</th>
+      <th>quantity available</th>
+      <th>price</th>
+    </tr>
+    <tr *ngFor="let x of x1">
+        <td><a [routerLink]="['/viewproduct',x.id]">{{x.id}}</a></td>
+      <td>{{x.title}}</td>
+      <td>{{x.description}}</td>
+      <td>{{x.quantity}}</td>
+      <td>{{x.price}}$
+    </td>
+    </tr>
+   
+  </table>
